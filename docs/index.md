@@ -13,6 +13,11 @@ This paper investigates how to efficiently transition and update policies, train
 
 To be uploaded.
 
+### Integrating Behavior Cloning and Reinforcement Learning
+
+| ![Lab Logos](lab_logos.png) | ![Lab Logos](lab_logos.png) |
+|:-:|:-:|
+
 ### Citation
 
 You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1810.11545)). Please cite our work as showed below: 
