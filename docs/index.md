@@ -1,17 +1,15 @@
 &nbsp;  
-### [Vinicius G. Goecks](https://www.vggoecks.com/)<sup>1,2</sup>, [Gregory M. Gremillion](https://scholar.google.com/citations?user=F5GopigAAAAJ&hl=en&oi=ao)<sup>2</sup>, [Vernon J. Lawhern](https://scholar.google.com/citations?user=9tJ4piEAAAAJ&hl=en)<sup>2</sup>,  [John Valasek](https://engineering.tamu.edu/aerospace/profiles/jvalasek.html)<sup>1</sup>, [Nicholas R. Waytowich](http://liinc.bme.columbia.edu/author/nick-waytowich/)<sup>2,3</sup>
+## [Vinicius G. Goecks](https://www.vggoecks.com/)<sup>1,2</sup>, [Gregory M. Gremillion](https://scholar.google.com/citations?user=F5GopigAAAAJ&hl=en&oi=ao)<sup>2</sup>, [Vernon J. Lawhern](https://scholar.google.com/citations?user=9tJ4piEAAAAJ&hl=en)<sup>2</sup>,  [John Valasek](https://engineering.tamu.edu/aerospace/profiles/jvalasek.html)<sup>1</sup>, [Nicholas R. Waytowich](http://liinc.bme.columbia.edu/author/nick-waytowich/)<sup>2,3</sup>
 {: style="text-align: center"}
 
-#### <sup>1</sup> Texas A&M University, <sup>2</sup>Army Research Laboratory, <sup>3</sup>Columbia University
+### <sup>1</sup> Texas A&M University, <sup>2</sup>Army Research Laboratory, <sup>3</sup>Columbia University
 {: style="text-align: center"}
 
-### Abstract
+##### This work investigates how to efficiently transition and update policies, trained initially with demonstrations, using off-policy actor-critic reinforcement learning. In this work we propose the Cycle-of-Learning (CoL) framework that uses an actor-critic architecture with a loss function that combines behavior cloning and 1-step Q-learning losses with an off-policy pre-training step from human demonstrations. This enables transition from behavior cloning to reinforcement learning without performance degradation and improves reinforcement learning in terms of overall performance and training time. Additionally, we carefully study the composition of these combined losses and their impact on overall policy learning and show that our approach outperforms state-of-the-art techniques for combining behavior cloning and reinforcement learning for both dense and sparse reward scenarios.
 
-This paper investigates how to efficiently transition and update policies, trained initially with demonstrations,  using off-policy actor-critic reinforcement learning. It is well-known that techniques based on Learning from Demonstrations, for example behavior cloning, can lead to proficient policies given limited data. However, it is currently unclear how to efficiently update that policy using reinforcement learning as these approaches are inherently optimizing different objective functions. Previous works have used loss functions which combine behavioral cloning losses with reinforcement learning losses to enable this update, however, the components of these loss functions are often set anecdotally, and their individual contributions are not well understood. In this work we propose the Cycle-of-Learning (CoL) framework that uses an actor-critic architecture with a loss function that combines behavior cloning and 1-step Q-learning losses with an off-policy pre-training step from human demonstrations. This enables transition from behavior cloning to reinforcement learning without performance degradation and improves reinforcement learning in terms of overall performance and training time. Additionally, we carefully study the composition of these combined losses and their impact on overall policy learning. We show that our approach outperforms state-of-the-art techniques for combining behavior cloning and reinforcement learning for both dense and sparse reward scenarios. Our results also suggest that directly including the behavior cloning loss on demonstration data helps to ensure stable learning and ground future policy updates.
+## [[Read the Paper](https://arxiv.org/abs/1810.11545)]
 
-### [[Read the Paper](https://arxiv.org/abs/1810.11545)]
-
-### Integrating Behavior Cloning and Reinforcement Learning
+## Integrating Behavior Cloning and Reinforcement Learning
 
 The Cycle-of-Learning (CoL) framework is a method for transitioning behavior cloning (BC) policies to reinforcement learning (RL) by utilizing an actor-critic architecture with a combined BC+RL loss function and pre-training phase for continuous state-action spaces, in dense- and sparse-reward environments.
 The main advantage of using off-policy methods is to re-use previous data to train the agent and reduce the amount of interactions between agent and environment, which is relevant to robotic applications or real-world system where interactions can be costly.
@@ -38,21 +36,29 @@ After collecting a given number of on-policy samples, the agent samples a batch 
 This fixed ratio guarantees that each gradient update is grounded by expert trajectories.
 If a human demonstrator is used, they can intervene at any time the agent is executing their policy, and add this new trajectories to the expert memory buffer.
 
-We compare our approach against state-of-the-art baselines, including BC, DDPG, and DDPGfD, and demonstrate the superiority of our method in terms of learning speed, stability, and performance with respect to these baselines, as seen in the training curves below for the LunarLanderContinuous-v2 (dense and sparse reward cases, first and second figure, respectively) and a custom quadrotor landing task with wind disturbance environments (third figure).
+We compare our approach against state-of-the-art baselines, including BC, DDPG, and DDPGfD, and demonstrate the superiority of our method in terms of learning speed, stability, and performance with respect to these baselines.
+
+The first environment we evaluate our approach is the LunarLanderContinuous-v2 by OpenAI Gym, for the dense and sparse reward cases. The dense reward case is the default for this environment and reward is computed based on how well the agent drives the lander to the landing pad and lands without crash. The sparse case uses the same reward function but instead of giving it to the agent at every time step, the reward is summed and stored and given to the agent just at the final time step.
+Figures below shows the CoL performance in these two environments (dense and sparse reward cases, first and second figure, respectively) compared to the baselines followed by a visualization of the policies after trained.
 
 <div style="text-align: center">
-![Training Curves](training_curves.png){:height="100%" width="100%"}
-</div>
-
-Sample of trajcetories for the CoL and its baselines are showed below:
-
-<div style="text-align: center">
-![AirSim Trained](airsim_col.gif){:height="100%" width="100%"}
+![Training Curves](training_curves_llc.png){:height="100%" width="100%"}
 </div>
 
 <div style="text-align: center">
 ![LLC Trained](llc_col.gif){:height="100%" width="100%"}
 </div>
+
+We also evaluated our algorithm on a quadrotor landing task with wind disturbance implemented using [Microsoft AirSim](https://github.com/microsoft/AirSim), a high-fidelity autonomous vehicle simulator. We repeated the same experiment and compare the CoL performance to its baseline. The figure below shows the training curves followed by a visualization of the trained policies.
+
+<div style="text-align: center">
+![Training Curves](training_curves_airsim.png){:height="50%" width="50%"}
+</div>
+
+<div style="text-align: center">
+![AirSim Trained](airsim_col.gif){:height="100%" width="100%"}
+</div>
+
 
 Additionally, several ablation studies were performed to evaluate the impact of each of the critical elements of the CoL on learning.
 These respectively include removal of the pre-training phase (CoL-PT), removal of the actor's expert behavior cloning loss during pre-training and RL (CoL-BC), and use of standard behavior cloning and DDPG loss functions rather than the combined loss function (BC+DDPG).
@@ -69,7 +75,7 @@ The results of each ablation condition are shown in the figure and table below:
 Further, the capability our approach provides, to transition from a limited number of human demonstrations to a baseline behavior cloning agent and subsequent improvement through reinforcement learning without significant losses in performance, is largely motivated by the goal of human-in-the-loop learning on physical system.
 Thus our aim is to integrate this method onto such systems and demonstrate rapid, safe, and stable learning from limited human interaction.
 
-### Citation
+## Citation
 
 You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1810.11545)). Please cite our work as showed below:
 ```
@@ -82,7 +88,7 @@ You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1810.1154
 }
 ```
 
-### Acknowledgments
+## Acknowledgments
 
 Research was sponsored by the U.S. Army Research Laboratory and was accomplished under Cooperative Agreement Number W911NF-18-2-0134. The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the Army Research Laboratory or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes not withstanding any copyright notation herein.
 
