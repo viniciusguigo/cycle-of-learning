@@ -23,12 +23,9 @@ To be uploaded.
 ![AirSim Human Demonstrations](airsim_human.gif){:height="70%" width="70%"}
 </div>
 
-$$
-\begin{align*}
-  \mathcal{L}_{CoL}& (\theta_Q, \theta_\pi) = \lambda_{BC} \mathcal{L}_{BC} (\theta_\pi) + \lambda_A \mathcal{L}_A (\theta_\pi) \nonumber \\
-     & +  \lambda_{Q_1} \mathcal{L}_{Q_{1}} (\theta_Q) + \lambda_{L2} \mathcal{L}_{L2} (\theta_Q) + \lambda_{L2} \mathcal{L}_{L2} (\theta_\pi)
-\end{align*}
-$$
+<div style="text-align: center">
+![Cycle-of-Learning Loss Function](col_loss.png){:height="70%" width="70%"}
+</div>
 
 ### Citation
 
