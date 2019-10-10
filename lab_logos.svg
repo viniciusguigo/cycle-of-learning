@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1117.7361mm"
-   height="139.55063mm"
-   viewBox="0 0 1117.7361 139.55063"
+   width="1039.8416mm"
+   height="179.32903mm"
+   viewBox="0 0 1039.8416 179.32903"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -30,8 +30,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="2147.5429"
-     inkscape:cy="-326.18742"
+     inkscape:cx="1790.3406"
+     inkscape:cy="-245.4918"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -60,7 +60,15 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(606.75763,77.021049)">
+     transform="translate(512.24786,95.44873)">
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.78148872;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect926"
+       width="1039.8416"
+       height="179.32903"
+       x="-512.24786"
+       y="-95.44873"
+       ry="0" />
     <image
        y="-77.021049"
        x="-10.250668"
@@ -6675,8 +6683,8 @@ AFFFFABRRRQAUUUUAFFFFABRRRQB/9k=
        height="138.99446"
        width="521.22913" />
     <image
-       y="-77.021049"
-       x="-606.75763"
+       y="-53.940197"
+       x="-502.51019"
        id="image904"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6wAAADkCAYAAACc2KnYAAAACXBIWXMAAC4jAAAuIwF4pT92AAAg
 AElEQVR4nO29T4wjS3beG/Vw72Is6LL8DNsCpHElDW707kDFa8AayGOo2N4ZeHaxV9Ku2ND6uXmX
@@ -7071,7 +7079,7 @@ t0NiEa+LL0LAE3gG8+HMG1yTdfAqgHeaKJLr3GXaOJYSQcQjmfGlCuvc4Sd0oilCWo9hHhWYR+84
 lzaEEOJ/AwS0krx03pSIAAAAAElFTkSuQmCC
 "
        preserveAspectRatio="none"
-       height="139.55063"
-       width="575.34027" />
+       height="105.53277"
+       width="435.09122" />
   </g>
 </svg>
