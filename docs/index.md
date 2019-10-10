@@ -15,7 +15,11 @@ To be uploaded.
 
 ### Integrating Behavior Cloning and Reinforcement Learning
 
-![Lab Logos](lab_logos.png){:height="10%" width="10%"}
+![LLC Human Demonstrations](llc_human.gif){:height="50%" width="50%" style="text-align: center"}
+
+![AirSim Human Demonstrations](airsim_human.gif){:height="50%" width="50%" style="text-align: center"}
+
+![Cycle-of-Learning Loss Function](col_loss.png){:height="50%" width="50%" style="text-align: center"}
 
 ### Citation
 
