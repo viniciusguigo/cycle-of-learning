@@ -18,15 +18,15 @@ To be uploaded.
 The Cycle-of-Learning (CoL) framework is a method for transitioning behavior cloning (BC) policies to reinforcement learning (RL) by utilizing an actor-critic architecture with a combined BC+RL loss function and pre-training phase for continuous state-action spaces, in dense- and sparse-reward environments.
 The main advantage of using off-policy methods is to re-use previous data to train the agent and reduce the amount of interactions between agent and environment, which is relevant to robotic applications or real-world system where interactions can be costly.
 
-The combined loss function consists of the following components: an expert behavior cloning loss that bounds actor's action to previous human trajectories, $1$-step return Q-learning loss to propagate values of human trajectories to previous states, the actor loss, and a L2 regularization loss on the actor and critic to stabilize performance and prevent over-fitting during training. 
+The combined loss function consists of the following components: an expert behavior cloning loss that bounds actor's action to previous human trajectories, 1-step return Q-learning loss to propagate values of human trajectories to previous states, the actor loss, and a L2 regularization loss on the actor and critic to stabilize performance and prevent over-fitting during training. 
 The implementation of each loss component can be seen in our paper ([link](https://arxiv.org/abs/1810.11545)). The weighted combination of the components can be written as
 
 <div style="text-align: center">
-![Cycle-of-Learning Loss Function](col_loss.png){:height="70%" width="70%"}
+![Cycle-of-Learning Loss Function](col_loss.png){:height="100%" width="100%"}
 </div>
 
 Our approach starts by collecting contiguous trajectories from expert policies (in this case, humans) and stores the current and subsequent state-actions pairs, reward received, and task completion signal in a permanent expert memory buffer.
-We validate our approach in three environments with continuous observation- and action-space: LunarLanderContinuous-v2 (dense and sparse reward cases) and a custom quadrotor landing task implemented using Microsoft AirSim.
+We validate our approach in three environments with continuous observation- and action-space: LunarLanderContinuous-v2 (dense and sparse reward cases) and a custom quadrotor landing task with wind disturbance implemented using Microsoft AirSim.
 
 <div style="text-align: center">
 ![Human Generated Trajectories](human_trajs.gif){:height="100%" width="100%"}
@@ -40,7 +40,21 @@ After collecting a given number of on-policy samples, the agent samples a batch 
 This fixed ratio guarantees that each gradient update is grounded by expert trajectories.
 If a human demonstrator is used, they can intervene at any time the agent is executing their policy, and add this new trajectories to the expert memory buffer.
 
+We compare our approach against state-of-the-art baselines, including BC, DDPG, and DDPGfD, and demonstrate the superiority of our method in terms of learning speed, stability, and performance with respect to these baselines, as seen in the training curves below for the LunarLanderContinuous-v2 (dense and sparse reward cases, first and second figure, respectively) and a custom quadrotor landing task with wind disturbance environments (third figure).
 
+<div style="text-align: center">
+![Training Curves](training_curves.png){:height="100%" width="100%"}
+</div>
+
+Sample of trajcetories for the CoL and its baselines are showed below:
+
+<div style="text-align: center">
+![AirSim Trained](airsim_col.gif){:height="100%" width="100%"}
+</div>
+
+<div style="text-align: center">
+![LLC Trained](llc_col.gif){:height="100%" width="100%"}
+</div>
 
 ### Citation
 
