@@ -15,8 +15,7 @@ To be uploaded.
 
 ### Integrating Behavior Cloning and Reinforcement Learning
 
-![Lab Logos](lab_logos.png)
-{: width=150 style="text-align: center"}
+![Lab Logos](lab_logos.png){:height="10%" width="10%"}
 
 ### Citation
 
