@@ -1,4 +1,4 @@
-### [Vinicius G. Goecks](https://www.vggoecks.com/)<sup>1,2</sup>, Gregory M. Gremillion<sup>2</sup>, Vernon J. Lawhern<sup>2</sup>, John Valasek<sup>1</sup>, Nicholas R. Waytowich<sup>2,3</sup>
+### [Vinicius G. Goecks](https://www.vggoecks.com/)<sup>1,2</sup>, [Gregory M. Gremillion](https://scholar.google.com/citations?user=F5GopigAAAAJ&hl=en&oi=ao)<sup>2</sup>, [Vernon J. Lawhern](https://scholar.google.com/citations?user=9tJ4piEAAAAJ&hl=en)<sup>2</sup>, [John Valasek](https://engineering.tamu.edu/aerospace/profiles/jvalasek.html)<sup>1</sup>, [Nicholas R. Waytowich](http://liinc.bme.columbia.edu/author/nick-waytowich/)<sup>2,3</sup>
 {: style="text-align: center"}
 
 #### <sup>1</sup> Texas A&M University, <sup>2</sup>Army Research Laboratory, <sup>3</sup>Columbia University
