@@ -9,9 +9,7 @@
 
 This paper investigates how to efficiently transition and update policies, trained initially with demonstrations,  using off-policy actor-critic reinforcement learning. It is well-known that techniques based on Learning from Demonstrations, for example behavior cloning, can lead to proficient policies given limited data. However, it is currently unclear how to efficiently update that policy using reinforcement learning as these approaches are inherently optimizing different objective functions. Previous works have used loss functions which combine behavioral cloning losses with reinforcement learning losses to enable this update, however, the components of these loss functions are often set anecdotally, and their individual contributions are not well understood. In this work we propose the Cycle-of-Learning (CoL) framework that uses an actor-critic architecture with a loss function that combines behavior cloning and 1-step Q-learning losses with an off-policy pre-training step from human demonstrations. This enables transition from behavior cloning to reinforcement learning without performance degradation and improves reinforcement learning in terms of overall performance and training time. Additionally, we carefully study the composition of these combined losses and their impact on overall policy learning. We show that our approach outperforms state-of-the-art techniques for combining behavior cloning and reinforcement learning for both dense and sparse reward scenarios. Our results also suggest that directly including the behavior cloning loss on demonstration data helps to ensure stable learning and ground future policy updates.
 
-### Video
-
-To be uploaded.
+### Read the Paper ([link](https://arxiv.org/abs/1810.11545))
 
 ### Integrating Behavior Cloning and Reinforcement Learning
 
@@ -54,6 +52,18 @@ Sample of trajcetories for the CoL and its baselines are showed below:
 
 <div style="text-align: center">
 ![LLC Trained](llc_col.gif){:height="100%" width="100%"}
+</div>
+
+Additionally, several ablation studies were performed to evaluate the impact of each of the critical elements of the CoL on learning.
+These respectively include removal of the pre-training phase (CoL-PT), removal of the actor's expert behavior cloning loss during pre-training and RL (CoL-BC), and use of standard behavior cloning and DDPG loss functions rather than the combined loss function (BC+DDPG).
+The results of each ablation condition are shown in the figure and table below:
+
+<div style="text-align: center">
+![Ablation Curve](ablation.png){:height="50%" width="50%"}
+</div>
+
+<div style="text-align: center">
+![Ablation Table](table.png){:height="100%" width="100%"}
 </div>
 
 ### Citation
