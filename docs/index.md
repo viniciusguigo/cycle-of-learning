@@ -16,11 +16,7 @@ To be uploaded.
 ### Integrating Behavior Cloning and Reinforcement Learning
 
 <div style="text-align: center">
-![LLC Human Demonstrations](llc_human.gif){:height="70%" width="70%"}
-</div>
-
-<div style="text-align: center">
-![AirSim Human Demonstrations](airsim_human.gif){:height="70%" width="70%"}
+![Human Generated Trajectories](human_trajs.gif){:height="70%" width="70%"}
 </div>
 
 <div style="text-align: center">
