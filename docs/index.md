@@ -2,7 +2,10 @@
 
 ###### <p style="text-align: center;"><sup>1</sup> Texas A&M University, <sup>2</sup>Army Research Laboratory, <sup>3</sup>Columbia University</p>
 
-text
+### text
+{: style="text-align: center"}
+
+### text<sup>3</sup>
 {: style="text-align: center"}
 
 ### Abstract
