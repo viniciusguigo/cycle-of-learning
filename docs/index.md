@@ -19,7 +19,9 @@ To be uploaded.
 
 ![AirSim Human Demonstrations](airsim_human.gif){:height="50%" width="50%" style="text-align: center"}
 
+<div class="img_container">
 ![Cycle-of-Learning Loss Function](col_loss.png){:height="50%" width="50%" style="text-align: center"}
+</div>
 
 ### Citation
 
