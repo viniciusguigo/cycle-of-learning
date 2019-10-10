@@ -15,13 +15,32 @@ To be uploaded.
 
 ### Integrating Behavior Cloning and Reinforcement Learning
 
-<div style="text-align: center">
-![Human Generated Trajectories](human_trajs.gif){:height="70%" width="70%"}
-</div>
+The Cycle-of-Learning (CoL) framework is a method for transitioning behavior cloning (BC) policies to reinforcement learning (RL) by utilizing an actor-critic architecture with a combined BC+RL loss function and pre-training phase for continuous state-action spaces, in dense- and sparse-reward environments.
+The main advantage of using off-policy methods is to re-use previous data to train the agent and reduce the amount of interactions between agent and environment, which is relevant to robotic applications or real-world system where interactions can be costly.
+
+The combined loss function consists of the following components: an expert behavior cloning loss that bounds actor's action to previous human trajectories, $1$-step return Q-learning loss to propagate values of human trajectories to previous states, the actor loss, and a L2 regularization loss on the actor and critic to stabilize performance and prevent over-fitting during training. 
+The implementation of each loss component can be seen in our paper ([link](https://arxiv.org/abs/1810.11545)). The weighted combination of the components can be written as
 
 <div style="text-align: center">
 ![Cycle-of-Learning Loss Function](col_loss.png){:height="70%" width="70%"}
 </div>
+
+Our approach starts by collecting contiguous trajectories from expert policies (in this case, humans) and stores the current and subsequent state-actions pairs, reward received, and task completion signal in a permanent expert memory buffer.
+We validate our approach in three environments with continuous observation- and action-space: LunarLanderContinuous-v2 (dense and sparse reward cases) and a custom quadrotor landing task implemented using Microsoft AirSim.
+
+<div style="text-align: center">
+![Human Generated Trajectories](human_trajs.gif){:height="100%" width="100%"}
+</div>
+
+During the pre-training phase, the agent samples a batch of trajectories from the expert memory buffer containing expert trajectories to perform updates on the actor and critic networks using the same combined loss function showed above.
+This procedure shapes the actor and critic initial distributions to be closer to the expert trajectories and eases the transition from policies learned through expert demonstration to reinforcement learning.
+
+After the pre-training phase, the policy is allowed to roll-out and collect its first on-policy samples, which are stored in a separate first-in-first-out memory buffer with only the agent's samples.
+After collecting a given number of on-policy samples, the agent samples a batch of trajectories comprising 25% of samples from the expert memory buffer and 75% from the agent's memory buffer.
+This fixed ratio guarantees that each gradient update is grounded by expert trajectories.
+If a human demonstrator is used, they can intervene at any time the agent is executing their policy, and add this new trajectories to the expert memory buffer.
+
+
 
 ### Citation
 
