@@ -45,7 +45,7 @@ Figures below shows the CoL performance in these two environments (dense and spa
 </div>
 
 <div style="text-align: center">
-![LLC Trained](llc_col.gif){:height="100%" width="100%"}
+![LLC Trained](llc_col.gif){:height="85%" width="85%"}
 </div>
 
 We also evaluated our algorithm on a quadrotor landing task with wind disturbance implemented using [Microsoft AirSim](https://github.com/microsoft/AirSim), a high-fidelity autonomous vehicle simulator. We repeated the same experiment and compared the CoL performance to the same baselines. The figure below shows the training curves followed by a visualization of the trained policies.
@@ -55,7 +55,7 @@ We also evaluated our algorithm on a quadrotor landing task with wind disturbanc
 </div>
 
 <div style="text-align: center">
-![AirSim Trained](airsim_col.gif){:height="100%" width="100%"}
+![AirSim Trained](airsim_col.gif){:height="85%" width="85%"}
 </div>
 
 
