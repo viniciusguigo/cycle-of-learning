@@ -1,11 +1,7 @@
-#### <p style="text-align: center;">Vinicius G. Goecks<sup>1,2</sup>, Gregory M. Gremillion<sup>2</sup>, Vernon J. Lawhern<sup>2</sup>, John Valasek<sup>1</sup>, Nicholas R. Waytowich<sup>2,3</sup> </p>
-
-###### <p style="text-align: center;"><sup>1</sup> Texas A&M University, <sup>2</sup>Army Research Laboratory, <sup>3</sup>Columbia University</p>
-
-### text
+### Vinicius G. Goecks<sup>1,2</sup>, Gregory M. Gremillion<sup>2</sup>, Vernon J. Lawhern<sup>2</sup>, John Valasek<sup>1</sup>, Nicholas R. Waytowich<sup>2,3</sup>
 {: style="text-align: center"}
 
-### text<sup>3</sup>
+#### <sup>1</sup> Texas A&M University, <sup>2</sup>Army Research Laboratory, <sup>3</sup>Columbia University
 {: style="text-align: center"}
 
 ### Abstract
