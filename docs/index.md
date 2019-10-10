@@ -12,7 +12,7 @@ To be uploaded.
 
 ### Citation
 
-You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1810.11545)). Please cite our work as showed below: 
+You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1810.11545)). Please cite our work as showed below:
 ```
 @inproceedings{goecks2019efficiently,
   title={Efficiently combining human demonstrations and interventions for safe training of autonomous systems in real time},
