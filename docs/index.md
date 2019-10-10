@@ -23,5 +23,4 @@ You can find our complete paper on arXiv (https://arxiv.org/abs/1810.11545). Ple
 
 Research was sponsored by the U.S. Army Research Laboratory and was accomplished under Cooperative Agreement Number W911NF-18-2-0134. The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the Army Research Laboratory or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes not withstanding any copyright notation herein.
 
-![VSCL Logo](vscl_logo.png)
-![ARL Logo](arl_logo.jpg)
+![Lab Logos](lab_logos.png)
