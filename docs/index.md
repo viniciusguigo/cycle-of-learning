@@ -7,14 +7,14 @@
 
 ### This work investigates how to efficiently transition and update policies, trained initially with demonstrations, using off-policy actor-critic reinforcement learning. In this work we propose the Cycle-of-Learning (CoL) framework that uses an actor-critic architecture with a loss function that combines behavior cloning and 1-step Q-learning losses with an off-policy pre-training step from human demonstrations. This enables transition from behavior cloning to reinforcement learning without performance degradation and improves reinforcement learning in terms of overall performance and training time. Additionally, we carefully study the composition of these combined losses and their impact on overall policy learning and show that our approach outperforms state-of-the-art techniques for combining behavior cloning and reinforcement learning for both dense and sparse reward scenarios.
 
-## [[Read the Paper](https://arxiv.org/abs/1810.11545)]
+## [[Read the Paper](https://arxiv.org/abs/1910.04281)]
 {: style="text-align: center"}
 
 ## Integrating Behavior Cloning and Reinforcement Learning
 
 The Cycle-of-Learning (CoL) framework is a method for transitioning behavior cloning (BC) policies to reinforcement learning (RL) by utilizing an actor-critic architecture with a combined BC+RL loss function and pre-training phase for continuous state-action spaces, in dense- and sparse-reward environments.
 This combined BC+RL loss function consists of the following components: an expert behavior cloning loss that bounds actor's action to previous human trajectories, 1-step return Q-learning loss to propagate values of human trajectories to previous states, the actor loss, and a L2 regularization loss on the actor and critic to stabilize performance and prevent over-fitting during training. 
-The implementation of each loss component can be seen in our paper ([link](https://arxiv.org/abs/1810.11545)). The weighted combination of the components can be written as
+The implementation of each loss component can be seen in our paper ([link](https://arxiv.org/abs/1910.04281)). The weighted combination of the components can be written as
 
 <div style="text-align: center">
 ![Cycle-of-Learning Loss Function](col_loss.png){:height="100%" width="100%"}
@@ -72,14 +72,15 @@ Thus our aim is to integrate this method onto such systems and demonstrate rapid
 
 ## Citation
 
-You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1810.11545)). Please cite our work as showed below:
+You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1910.04281)). Please cite our work as showed below:
 ```
-@inproceedings{goecks2019efficiently,
-  title={Efficiently combining human demonstrations and interventions for safe training of autonomous systems in real time},
-  author={Goecks, Vinicius G and Gremillion, Gregory M and Lawhern, Vernon J and Valasek, John and Waytowich, Nicholas R},
-  booktitle={AAAI Conference on Artificial Intelligence (2019). Frames/sec vs Params No GPU},
-  volume={140},
-  year={2019}
+@misc{goecks2019integrating,
+    title={Integrating Behavior Cloning and Reinforcement Learning for Improved Performance in Sparse Reward Environments},
+    author={Vinicius G. Goecks and Gregory M. Gremillion and Vernon J. Lawhern and John Valasek and Nicholas R. Waytowich},
+    year={2019},
+    eprint={1910.04281},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
 }
 ```
 
