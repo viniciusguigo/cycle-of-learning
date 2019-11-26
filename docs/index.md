@@ -10,7 +10,7 @@
 ## [[Read the Paper](https://arxiv.org/abs/1910.04281)]
 {: style="text-align: center"}
 
-## Integrating Behavior Cloning and Reinforcement Learning
+## Proposed Approach
 
 The Cycle-of-Learning (CoL) framework is a method for transitioning behavior cloning (BC) policies to reinforcement learning (RL) by utilizing an actor-critic architecture with a combined BC+RL loss function and pre-training phase for continuous state-action spaces, in dense- and sparse-reward environments.
 This combined BC+RL loss function consists of the following components: an expert behavior cloning loss that bounds actor's action to previous human trajectories, 1-step return Q-learning loss to propagate values of human trajectories to previous states, the actor loss, and a L2 regularization loss on the actor and critic to stabilize performance and prevent over-fitting during training. 
@@ -35,7 +35,7 @@ After collecting a given number of on-policy samples, the agent samples a batch 
 This fixed ratio guarantees that each gradient update is grounded by expert trajectories.
 If a human demonstrator is used, they can intervene at any time the agent is executing their policy, and add this new trajectories to the expert memory buffer.
 
-We compare our approach against state-of-the-art baselines, including BC, DDPG, and DDPGfD, and demonstrate the the main advantages of our method in terms of learning speed, stability, and performance with respect to them.
+We compare our approach against state-of-the-art baselines, including BC, DDPG, and DAPG, and demonstrate the the main advantages of our method in terms of learning speed, stability, and performance with respect to them.
 
 The first environment we evaluate our approach is the LunarLanderContinuous-v2 by OpenAI Gym, for the dense and sparse reward cases. The dense reward case is the default for this environment and reward is computed based on how well the agent drives the lander to the landing pad and lands without crashing it. The sparse case uses the same reward function but instead of giving it to the agent at every time step, the reward is summed and stored and given to the agent just at the final time step.
 Figures below shows the CoL performance in these two environments (dense and sparse reward cases, respectively) compared to the baselines followed by a visualization of the policies after training.
@@ -44,9 +44,9 @@ Figures below shows the CoL performance in these two environments (dense and spa
 ![Training Curves](training_curves_llc.png){:height="100%" width="100%"}
 </div>
 
-<div style="text-align: center">
+<!-- <div style="text-align: center">
 ![LLC Trained](llc_col.gif){:height="85%" width="85%"}
-</div>
+</div> -->
 
 We also evaluated our algorithm on a quadrotor landing task with wind disturbance implemented using [Microsoft AirSim](https://github.com/microsoft/AirSim), a high-fidelity autonomous vehicle simulator. We repeated the same experiment and compared the CoL performance to the same baselines. The figure below shows the training curves followed by a visualization of the trained policies.
 
@@ -54,17 +54,16 @@ We also evaluated our algorithm on a quadrotor landing task with wind disturbanc
 ![Training Curves](training_curves_airsim.png){:height="50%" width="50%"}
 </div>
 
-<div style="text-align: center">
+<!-- <div style="text-align: center">
 ![AirSim Trained](airsim_col.gif){:height="85%" width="85%"}
-</div>
+</div> -->
 
 
-Additionally, several ablation studies were performed to evaluate the impact of each of the critical elements of the CoL during training.
-These respectively include removal of the pre-training phase (CoL-PT), removal of the actor's expert behavior cloning loss during pre-training and RL (CoL-BC), and use of standard behavior cloning and DDPG loss functions rather than the combined loss function (BC+DDPG).
-The results of each ablation condition are shown in the figure below:
+Several component analyses were performed to evaluate the impact of each of the critical elements of the CoL on learning.
+These respectively include the effects of pre-training (with pre-training, CoL, or without it, CoL-PT), the combined loss function (no combined loss, BC+DDPG, and CoL without behavior cloning loss, CoL-BC), and the sample composition of the experience replay buffer (fixed ratio of expert and agent samples, CoL, or using prioritized experience replay, CoL+PER, for both sparse, S, and dense reward cases, marked with D), as showed in the figures below:
 
 <div style="text-align: center">
-![Ablation Curve](ablation.png){:height="50%" width="50%"}
+![Component Analysis](component.png){:height="100%" width="100%"}
 </div>
 
 Further, the capability our approach provides, to transition from a limited number of human demonstrations to a baseline behavior cloning agent and subsequent improvement through reinforcement learning without significant losses in performance, is largely motivated by the goal of human-in-the-loop learning on physical system.
