@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
-title: Integrating Behavior Cloning and Reinforcement Learning for Improved Performance in Sparse Reward Environments
+title: Integrating Behavior Cloning and Reinforcement Learning for Improved Performance in Dense and Sparse Reward Environments
 kramdown:
   parse_block_html: true
