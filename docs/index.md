@@ -7,7 +7,7 @@
 
 ### This work investigates how to efficiently transition and update policies, trained initially with demonstrations, using off-policy actor-critic reinforcement learning. In this work we propose the Cycle-of-Learning (CoL) framework that uses an actor-critic architecture with a loss function that combines behavior cloning and 1-step Q-learning losses with an off-policy pre-training step from human demonstrations. This enables transition from behavior cloning to reinforcement learning without performance degradation and improves reinforcement learning in terms of overall performance and training time. Additionally, we carefully study the composition of these combined losses and their impact on overall policy learning and show that our approach outperforms state-of-the-art techniques for combining behavior cloning and reinforcement learning for both dense and sparse reward scenarios.
 
-## [[Read the Paper](https://arxiv.org/abs/1910.04281)]
+## [[Read the Paper](https://arxiv.org/abs/1910.04281)|[Supplemental Material](https://github.com/viniciusguigo/cycle-of-learning/blob/master/docs/CoL_AAMAS20_appendix.pdf)]
 {: style="text-align: center"}
 
 ## Proposed Approach
