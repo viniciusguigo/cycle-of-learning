@@ -10,6 +10,10 @@
 ## [[Read the Paper](https://arxiv.org/abs/1910.04281)|[Supplemental Material](https://github.com/viniciusguigo/cycle-of-learning/blob/master/docs/CoL_AAMAS20_appendix.pdf)]
 {: style="text-align: center"}
 
+## Video
+
+[![AAMAS-20: The Cycle-of-Learning](http://img.youtube.com/vi/AQwsk6kZfok/0.jpg)](http://www.youtube.com/watch?v=AQwsk6kZfok "AAMAS-20: The Cycle-of-Learning")
+
 ## Proposed Approach
 
 The Cycle-of-Learning (CoL) framework is a method for transitioning behavior cloning (BC) policies to reinforcement learning (RL) by utilizing an actor-critic architecture with a combined BC+RL loss function and pre-training phase for continuous state-action spaces, in dense- and sparse-reward environments.
