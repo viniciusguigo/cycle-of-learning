@@ -12,6 +12,8 @@
 
 ## Video
 
+Click on the image below to watch the video:
+
 [![AAMAS-20: The Cycle-of-Learning](http://img.youtube.com/vi/AQwsk6kZfok/0.jpg)](http://www.youtube.com/watch?v=AQwsk6kZfok "AAMAS-20: The Cycle-of-Learning")
 
 ## Proposed Approach
