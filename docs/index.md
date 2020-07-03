@@ -79,13 +79,19 @@ Thus our aim is to integrate this method onto such systems and demonstrate rapid
 
 You can find our complete paper on arXiv ([link](https://arxiv.org/abs/1910.04281)). Please cite our work as showed below:
 ```
-@misc{goecks2019integrating,
-    title={Integrating Behavior Cloning and Reinforcement Learning for Improved Performance in Sparse Reward Environments},
-    author={Vinicius G. Goecks and Gregory M. Gremillion and Vernon J. Lawhern and John Valasek and Nicholas R. Waytowich},
-    year={2019},
-    eprint={1910.04281},
-    archivePrefix={arXiv},
-    primaryClass={cs.LG}
+@inproceedings{10.5555/3398761.3398819,
+author = {Goecks, Vinicius G. and Gremillion, Gregory M. and Lawhern, Vernon J. and Valasek, John and Waytowich, Nicholas R.},
+title = {Integrating Behavior Cloning and Reinforcement Learning for Improved Performance in Dense and Sparse Reward Environments},
+year = {2020},
+isbn = {9781450375184},
+publisher = {International Foundation for Autonomous Agents and Multiagent Systems},
+address = {Richland, SC},
+booktitle = {Proceedings of the 19th International Conference on Autonomous Agents and MultiAgent Systems},
+pages = {465–473},
+numpages = {9},
+keywords = {human-robot/agent interaction, machine learning for robotics, reinforcement learning, agent-based analysis of human interaction},
+location = {Auckland, New Zealand},
+series = {AAMAS ’20}
 }
 ```
 
